@@ -43,3 +43,11 @@ body {
   margin-left: 5%;
   text-align: left;
 }
+span {
+  border: 2px solid #000;
+  padding: 1%;
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 5%;
+  background-color: #000;
+}

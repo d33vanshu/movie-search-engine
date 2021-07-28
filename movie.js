@@ -28,7 +28,6 @@ async function getMovie() {
       img.src = data.Poster;
       let title = document.createElement("h2");
       title.innerHTML = data.Title;
-
       let year = document.createElement("p");
       year.innerHTML = "Year:   " + data.Year;
       let genre = document.createElement("p");
@@ -40,7 +39,14 @@ async function getMovie() {
       let awards = document.createElement("p");
       awards.innerHTML = "Awards:   " + data.Awards;
       let imdb = document.createElement("p");
-      imdb.innerHTML = "IMDB Rating:   " + data.imdbRating + "/10";
+      if (data.imdbRating > 8.5) {
+        imdb.innerHTML =
+          "IMDB Rating:   " +
+          data.imdbRating +
+          "/10   <span>Recommended</span>";
+      } else {
+        imdb.innerHTML = "IMDB Rating:   " + data.imdbRating + "/10";
+      }
 
       content_div.append(title, year, genre, imdb, director, writer, awards);
       img_div.append(img);
